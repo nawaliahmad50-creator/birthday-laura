@@ -1,0 +1,23 @@
+ id="p2b">
+<h1><span class="gold">100% 🥰</span><br>You Filled My Heart</h1>
+<p style="font-size:60px;margin-top:20px">💖</p>
+<button class="btn" onclick="go(3)">NEXT →</button>
+</div>
+<div class="page" id="p3">
+<h1>Happy Birthday<br><span class="gold">JIHAND LAURA FERMEN</span></h1>
+<div id="gift" onclick="this.textContent='🎉';document.getElementById('wish').style.display='block'" style="margin-top:20px">💗<br><span style="font-size:12px;color:white">klik kadonya</span></div>
+<div id="wish" style="display:none;width:85%;color:white;font-size:14px;line-height:1.6;margin-top:20px;text-align:left;background:rgba(0,0,0,0.3);padding:15px;border-radius:10px">
+<b>Selamat ulang tahun Jihand!</b><br><br>
+Semoga panjang umur, sehat selalu, semua doamu tercapai. Makasih udah jadi yang terindah dalam hidupku.<br><br>
+I Love You ❤️
+</div>
+</div>
+<script>
+function go(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p'+n).classList.add('active')}
+let pr=0,tm;const fill=document.getElementById('fill');const pct=document.getElementById('pct');const btn=document.getElementById('heartBtn');
+function up(){pr=Math.min(100,pr+2);fill.style.height=pr+'%';pct.textContent=pr+'%';if(pr>=100){clearInterval(tm);setTimeout(()=>go('2b'),500)}}
+btn.addEventListener('touchstart',e=>{e.preventDefault();tm=setInterval(up,30)});btn.addEventListener('mousedown',()=>{tm=setInterval(up,30)});
+window.addEventListener('touchend',()=>clearInterval(tm));window.addEventListener('mouseup',()=>clearInterval(tm));
+</script>
+</body>
+</html>
